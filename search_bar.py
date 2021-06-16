@@ -13,7 +13,6 @@ class Signup(db.Model):
     date_time = db.Column(db.DateTime)
 @app.route("/<string:key>")
 def search(key):
-    return "chirag {}".format(key)
     res=Signup.query.filter_by(username=key).first()
     return jsonify({'name':res.username})
 
