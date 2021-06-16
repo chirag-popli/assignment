@@ -11,7 +11,7 @@ class Signup(db.Model):
     phone_no = db.Column(db.String())
     password = db.Column(db.Integer)
     date_time = db.Column(db.DateTime)
-@app.route("/search/<string:key>")
+@app.route("/<string:key>")
 def search(key):
     res=Signup.query.filter_by(username=key).first()
     return jsonify({'name':res.username})
